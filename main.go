@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"countreez/configs"
+)
 
 func main() {
-	fmt.Println("Hello from main")
+	configs.GetConnection()
+	defer configs.DB.Close()
 }

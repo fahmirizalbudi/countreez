@@ -1,0 +1,42 @@
+package configs
+
+import (
+	"database/sql"
+	"fmt"
+	"os"
+	_ "github.com/lib/pq"
+
+	"github.com/joho/godotenv"
+)
+
+var (
+	DB  *sql.DB
+	err error
+)
+
+func GetConnection() {
+	err = godotenv.Load(".env")
+	if err != nil {
+		panic("Error loading .env file")
+	}
+
+	psqlInfo := fmt.Sprintf(`host=%s port=%s user=%s password=%s dbname=%s sslmode=disable`,
+		os.Getenv("PGHOST"),
+		os.Getenv("PGPORT"),
+		os.Getenv("PGUSER"),
+		os.Getenv("PGPASSWORD"),
+		os.Getenv("PGDATABASE"),
+	)
+
+	DB, err = sql.Open("postgres", psqlInfo)
+	if err != nil {
+		panic(err)
+	}
+
+	err = DB.Ping()
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("PostgreSQL connection established successfully.")
+}
