@@ -11,11 +11,10 @@ import (
 
 var (
 	DB  *sql.DB
-	err error
 )
 
-func GetConnection() {
-	err = godotenv.Load(".env")
+func GetPsqlConnection() {
+	err := godotenv.Load(".env")
 	if err != nil {
 		panic("Error loading .env file")
 	}
