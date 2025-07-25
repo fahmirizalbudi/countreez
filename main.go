@@ -5,6 +5,7 @@ import (
 )
 
 func main() {
-	configs.GetConnection()
+	configs.GetCtx()
+	configs.GetPsqlConnection()
 	defer configs.DB.Close()
 }
