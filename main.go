@@ -7,5 +7,6 @@ import (
 func main() {
 	configs.GetCtx()
 	configs.GetPsqlConnection()
+	configs.GetRedisConnection()
 	defer configs.DB.Close()
 }
