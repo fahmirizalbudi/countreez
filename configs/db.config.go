@@ -5,20 +5,14 @@ import (
 	"fmt"
 	"os"
 	_ "github.com/lib/pq"
-
-	"github.com/joho/godotenv"
 )
 
 var (
 	DB  *sql.DB
+	err error
 )
 
 func GetPsqlConnection() {
-	err := godotenv.Load(".env")
-	if err != nil {
-		panic("Error loading .env file")
-	}
-
 	psqlInfo := fmt.Sprintf(`host=%s port=%s user=%s password=%s dbname=%s sslmode=disable`,
 		os.Getenv("PGHOST"),
 		os.Getenv("PGPORT"),

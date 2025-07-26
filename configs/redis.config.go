@@ -2,6 +2,8 @@ package configs
 
 import (
 	"fmt"
+	"os"
+	"strconv"
 
 	"github.com/redis/go-redis/v9"
 )
@@ -11,12 +13,17 @@ var (
 )
 
 func GetRedisConnection() {
+	REDISDATABASE, err := strconv.Atoi(os.Getenv("REDISDATABASE"))
+	if err != nil {
+		REDISDATABASE = 0
+	}
+
 	Redis = redis.NewClient(&redis.Options{
-		Addr: "localhost:6379",
-		DB: 0,
+		Addr: os.Getenv("REDISHOST"),
+		DB: REDISDATABASE,
 	})
 
-	 _, err := Redis.Ping(Ctx).Result()
+	 _, err = Redis.Ping(Ctx).Result()
     if err != nil {
         panic(err)
     }
