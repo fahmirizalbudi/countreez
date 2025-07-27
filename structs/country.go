@@ -1,13 +1,11 @@
 package structs
 
 type Country struct {
-	ID uint
-	Name string
-	Iso2 string
-	Iso3 string
-	Capital string
-	Region string
-	Language string
-	CreatedAt interface{}
-	UpdatedAt interface{}
+	ID       uint   `json:"id"`
+	Name     string `json:"name"`
+	Iso2     string `json:"iso2"`
+	Iso3     string `json:"iso3"`
+	Capital  string `json:"capital"`
+	Region   string `json:"region"`
+	Language string `json:"language"`
 }

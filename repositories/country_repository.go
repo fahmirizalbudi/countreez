@@ -6,7 +6,7 @@ import (
 )
 
 func GetAllCountries(dbParam *sql.DB) (result []structs.Country, err error) {
-	sql := "SELECT * FROM countries"
+	sql := "SELECT id, name, iso2, iso3, capital, region, language FROM countries"
 
 	rows, err := dbParam.Query(sql)
 	if err != nil {
@@ -17,9 +17,9 @@ func GetAllCountries(dbParam *sql.DB) (result []structs.Country, err error) {
 	for rows.Next() {
 		var country structs.Country
 
-		err = rows.Scan(&country.ID, &country.Name, &country.Iso2, &country.Iso3, &country.Capital, &country.Region, &country.Language, &country.CreatedAt, &country.UpdatedAt)
+		err = rows.Scan(&country.ID, &country.Name, &country.Iso2, &country.Iso3, &country.Capital, &country.Region, &country.Language)
 		if err != nil {
-			return
+			panic(err)
 		}
 
 		result = append(result, country)
