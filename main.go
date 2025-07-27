@@ -3,6 +3,7 @@ package main
 import (
 	"countreez/configs"
 	"countreez/database"
+	"countreez/router"
 )
 
 func main() {
@@ -11,5 +12,9 @@ func main() {
 	configs.GetPsqlConnection()
 	database.DBMigrate()
 	configs.GetRedisConnection()
+
+	router := router.CountreezRoute()
+	router.Run(":8080")
+
 	defer configs.DB.Close()
 }
