@@ -1,64 +1,77 @@
-<p align="center">
-  <img src="https://github.com/fahmirizalbudi/countreez/blob/main/countreez.png" alt="Countreez Logo" width="300"/>
-</p>
+<div align="center">
+<a href="https://github.com/fahmirizalbudi/countreez" target="blank">
+<img src="https://raw.githubusercontent.com/JjagoKoding/icon/9553c54df9c958f7ee00506742dfd446b57ae3e1/countreez.svg" width="300" alt="Logo" />
+</a>
+
+<br />
+<br />
+
+![](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![](https://img.shields.io/badge/Gin-00A393?style=for-the-badge&logo=gin&logoColor=white)
+![](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![](https://img.shields.io/badge/redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+
+</div>
 
 <br/>
 
-# 🌎 Countreez
+## 🌍 Countreez
 
-Countreez – a simple REST API to search and count countries.
+Countreez is a dedicated API solution crafted for comprehensive country data management and discovery. Built in Go and Gin Web Framework, this project was created to learn. This project uses PostgreSQL as the database and Redis for caching. Key features include:
 
----
+## ✨ Features
 
-## 🛠️ Tech Stack
+- **⚡ Unlimited Requests:** Handle unlimited API requests without restrictions.
+- **🚀 High Performance:** Optimized response times using Redis caching.
+- **🗺️ Countries Management:** View and search country data; manage global information easily.
 
-- Go (Golang)
-- PostgreSQL
-- Redis
+## 👩‍💻 Tech Stack
 
----
+- **Go**: A statically typed programming language designed for building scalable and high-performance server-side applications.
+- **Gin**: A high-performance web framework for Go, designed for building RESTful APIs and web applications.
+- **PostgreSQL**: A powerful, open-source relational database system for storing and managing structured data.
+- **Redis**: An in-memory data structure store, used as a database, cache, and message broker to improve API performance.
 
-## ⚙️ Instalation
+## 📦 Getting Started
 
-1. Clone repository:
+To get a local copy of this project up and running, follow these steps.
+
+### 🚀 Prerequisites
+
+- **Go** (v1.24.x or higher).
+- **PostgreSQL** (or another supported SQL database).
+- **Redis** (latest stable version).
+
+## 🛠️ Installation
+
+1. **Clone the repository:**
+
    ```bash
    git clone https://github.com/fahmirizalbudi/countreez.git
-   cd book-api
+   cd countreez
    ```
 
-3. Install dependency:
+2. **Install dependencies:**
+
    ```bash
    go mod tidy
    ```
 
-4. Run API:
+3. **Start the development server:**
+
    ```bash
    go run main.go
    ```
 
----
+## 📖 Usage
 
-## 🔗 Endpoint
+### ✔ Running the Website
 
-| Method | Endpoint                    | Description             |
-|--------|-----------------------------|-------------------------|
-| GET    | `/api/countries`                | Retrieve all country       |
+- **Development mode:** `go run main.go`.
+- **Production mode:** `go build main.go && ./main`.
 
-Example JSON Body:
-```json
-{
-    "id": 1,
-    "name": "Afghanistan",
-    "iso2": "AF.",
-    "iso3": "AFG",
-    "capita;": "Kabul",
-    "region": "Asia",
-    "language": "fa-AF,ps,uz-AF,tk",
-}
-```
+> Use [http://localhost:8080](http://localhost:8080) to test the api in your Postman.
 
----
+## 📜 License
 
-## 🎯 Purpose
-
-This project was built to practice building RESTful APIs using Go, PostgreSQL, and Redis.
+All rights reserved. This project is for educational purposes only and cannot be used or distributed without permission.
