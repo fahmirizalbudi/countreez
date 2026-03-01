@@ -15,34 +15,34 @@
 
 <br/>
 
-## 🌍 Countreez
+## Countreez
 
 Countreez is a dedicated API solution crafted for comprehensive country data management and discovery. Built in Go and Gin Web Framework, this project was created to learn. This project uses PostgreSQL as the database and Redis for caching. Key features include:
 
-## ✨ Features
+## Features
 
-- **⚡ Unlimited Requests:** Handle unlimited API requests without restrictions.
-- **🚀 High Performance:** Optimized response times using Redis caching.
-- **🗺️ Countries Management:** View and search country data; manage global information easily.
+- **Unlimited Requests:** Handle unlimited API requests without restrictions.
+- **High Performance:** Optimized response times using Redis caching.
+- **Countries Management:** View and search country data; manage global information easily.
 
-## 👩‍💻 Tech Stack
+## Tech Stack
 
 - **Go**: A statically typed programming language designed for building scalable and high-performance server-side applications.
 - **Gin**: A high-performance web framework for Go, designed for building RESTful APIs and web applications.
 - **PostgreSQL**: A powerful, open-source relational database system for storing and managing structured data.
 - **Redis**: An in-memory data structure store, used as a database, cache, and message broker to improve API performance.
 
-## 📦 Getting Started
+## Getting Started
 
 To get a local copy of this project up and running, follow these steps.
 
-### 🚀 Prerequisites
+### Prerequisites
 
 - **Go** (v1.24.x or higher).
 - **PostgreSQL** (or another supported SQL database).
 - **Redis** (latest stable version).
 
-## 🛠️ Installation
+## Installation
 
 1. **Clone the repository:**
 
@@ -63,15 +63,15 @@ To get a local copy of this project up and running, follow these steps.
    go run main.go
    ```
 
-## 📖 Usage
+## Usage
 
-### ✔ Running the Website
+### Running the Website
 
 - **Development mode:** `go run main.go`.
 - **Production mode:** `go build main.go && ./main`.
 
 > Use [http://localhost:8080](http://localhost:8080) to test the api in your Postman.
 
-## 📜 License
+## License
 
 All rights reserved. This project is for educational purposes only and cannot be used or distributed without permission.
